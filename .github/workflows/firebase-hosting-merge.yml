@@ -15,20 +15,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Build Mantine React Essentials
-        working-directory: .
-        run: npm ci && npm run build
-      - name: Deploy Mantine React Essentials
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-          projectId: portfolio101
-          target: mantine-react-essentials
-
       - name: Build Mantine Tic Tac Toe
-        working-directory: .  # Adjust this path
-        run: npm ci && npm run build
+        working-directory: .
+        run: npm ci --legacy-peer-deps && npm run build
       - name: Deploy Mantine Tic Tac Toe
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
