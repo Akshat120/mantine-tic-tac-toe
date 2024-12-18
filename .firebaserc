@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "portfolio101"
+    "default": "portfolio101",
+    "staging": "portfolio101"
   },
   "targets": {
     "portfolio101": {
