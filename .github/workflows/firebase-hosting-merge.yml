@@ -23,3 +23,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO101 }}
           channelId: live
           projectId: portfolio101
+          target: mantine-tic-tac-toe

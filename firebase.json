@@ -5,8 +5,8 @@
       "public": "dist",
       "rewrites": [
         {
-          "source": "/mantine-tic-tac-toe/**",
-          "destination": "/mantine-tic-tac-toe/index.html"
+          "source": "**",
+          "destination": "/index.html"
         }
       ],
       "ignore": [
