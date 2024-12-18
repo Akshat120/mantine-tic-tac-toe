@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "portfolio101"
-  }
+  },
+  "targets": {
+    "portfolio101": {
+      "hosting": {
+        "mantine-tic-tac-toe": [
+          "portfolio101"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
