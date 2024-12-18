@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '14'
       - name: Build Mantine React Essentials
-        working-directory: ./mantine-react-essentials
+        working-directory: .
         run: npm ci && npm run build
       - name: Deploy Mantine React Essentials
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -27,7 +27,7 @@ jobs:
           target: mantine-react-essentials
 
       - name: Build Mantine Tic Tac Toe
-        working-directory: ./mantine-tic-tac-toe
+        working-directory: .  # Adjust this path
         run: npm ci && npm run build
       - name: Deploy Mantine Tic Tac Toe
         uses: FirebaseExtended/action-hosting-deploy@v0
