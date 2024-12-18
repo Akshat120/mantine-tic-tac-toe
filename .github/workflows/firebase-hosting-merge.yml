@@ -6,22 +6,20 @@ on:
   push:
     branches:
       - master
-
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14'
-      - name: Build Mantine Tic Tac Toe
-        working-directory: .
-        run: npm ci --legacy-peer-deps && npm run build
-      - name: Deploy Mantine Tic Tac Toe
-        uses: FirebaseExtended/action-hosting-deploy@v0
+          node-version: '18' # or latest LTS version
+      - run: npm ci
+      - run: npm install --save-dev @types/node
+      - run: npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO101 }}
+          channelId: live
           projectId: portfolio101
-          target: mantine-tic-tac-toe
